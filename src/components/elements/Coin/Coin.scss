@@ -1,0 +1,21 @@
+.Coin_wrapper {
+  background-color: #ffffff;
+  border-radius: 5px;
+  margin: 1rem;
+  padding: 1rem;
+  box-shadow: 0.1rem 0.2rem 0.7rem #444040;
+  color: #444040;
+  .Logo_wrapper {
+    width: 5rem;
+    height: 5rem;
+    margin-right: 2rem;
+    img {
+      border-radius: 50%;
+      height: 100%;
+    }
+  }
+  .CoinBody {
+    display: flex;
+    flex-direction: column;
+  }
+}

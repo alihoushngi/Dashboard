@@ -1,0 +1,22 @@
+ul {
+  .list-item {
+    margin: 1rem;
+  }
+
+  .link {
+    text-decoration: none;
+    font-style: normal !important;
+    color: #fff;
+    &:hover {
+      color: #03e9f4;
+    }
+  }
+}
+
+.logo_wrapper {
+  .logo {
+    width: 60px;
+    height: 60px;
+    padding: 1rem;
+  }
+}

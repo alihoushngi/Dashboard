@@ -1,0 +1,32 @@
+.Search_wrapper {
+  text-align: center;
+}
+
+.swiper-slide {
+  display: flex;
+  align-items: stretch;
+}
+
+.swiper-button-prev {
+  background-color: #03e9f4;
+  color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 50%;
+  text-align: center;
+
+  &::after {
+    font-size: 2rem;
+  }
+}
+
+.swiper-button-next {
+  background-color: #03e9f4;
+  color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 50%;
+  text-align: center;
+
+  &::after {
+    font-size: 2rem;
+  }
+}

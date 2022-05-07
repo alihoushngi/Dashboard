@@ -1,0 +1,40 @@
+@import "../../../styles/global.scss";
+
+.search_wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  .search {
+    padding-left: 4px;
+    border: none;
+    width: auto;
+    height: 3rem;
+    border-radius: 1rem;
+    font-size: 1rem;
+    padding-left: 3.8rem;
+    box-shadow: $inner-shadow;
+    background-color: $white;
+    font-family: inherit;
+    color: $greyDark;
+
+    &::placeholder {
+      color: $greyLight-3;
+    }
+    &:focus {
+      outline: none;
+      box-shadow: $shadow;
+      ~ .search_icon {
+        color: $primary;
+      }
+    }
+  }
+  .search_icon {
+    position: absolute;
+    font-size: 1rem;
+    padding: 0 1rem;
+    display: flex;
+    color: $greyDark;
+    transition: 0.3s ease;
+    left: 1.3rem;
+  }
+}

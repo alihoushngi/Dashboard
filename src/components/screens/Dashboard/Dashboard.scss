@@ -1,0 +1,32 @@
+.overview {
+  padding: 4em 1rem 1rem 1rem;
+  color: black;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    0deg,
+    rgba(2, 0, 36, 0) 0%,
+    rgba(3, 233, 244, 0.4962359943977591) 33%,
+    rgba(3, 233, 244, 1) 87%,
+    rgba(3, 233, 244, 0.5998774509803921) 100%
+  );
+  font-weight: bold;
+}
+
+.Chart_wrapper {
+  display: flex;
+  justify-content: center;
+  height: 300px;
+  width: 50%;
+  flex-direction: column;
+
+  .Chart_data {
+    height: 300px;
+
+    // margin: 10px auto;
+  }
+}
+
+.Coins_wrapper {
+  width: 100px;
+  height: 100px;
+}

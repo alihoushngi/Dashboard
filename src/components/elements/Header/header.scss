@@ -1,0 +1,78 @@
+@import "../../../styles/global.scss";
+
+.container {
+  padding: 1rem;
+  h3 {
+    margin-bottom: 0;
+    font-size: 1rem;
+    color: white;
+  }
+  .avatar {
+    display: inline;
+    border-radius: 50%;
+    border: 3px solid #03e9f4;
+    width: 100px;
+    height: 100px;
+  }
+}
+
+// ? switch
+.switch {
+  grid-column: 1 / 2;
+  display: grid;
+  grid-template-columns: repeat(2, min-content);
+  grid-gap: 3rem;
+  justify-self: center;
+  span {
+    margin-top: 1rem;
+  }
+  input {
+    display: none;
+  }
+  &__1 {
+    width: 4rem;
+    margin-top: 1rem;
+
+    label {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      height: 2rem;
+      background: #fff;
+      position: relative;
+      cursor: pointer;
+      border-radius: 1.6rem;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0.4rem;
+        width: 1.5rem;
+        height: 1.5rem;
+        border-radius: 50%;
+        background: #03e9f4;
+        transition: all 0.4s ease;
+      }
+      &::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        border-radius: inherit;
+        background-color: #03e9f4;
+        opacity: 0;
+        transition: all 0.4s ease;
+      }
+    }
+  }
+  & input:checked {
+    & ~ label {
+      &::before {
+        opacity: 1;
+      }
+      &::after {
+        left: 57%;
+        background: $greyLight-1;
+      }
+    }
+  }
+}

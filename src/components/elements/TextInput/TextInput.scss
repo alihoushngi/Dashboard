@@ -1,0 +1,33 @@
+@import "../../../styles/global.scss";
+
+.Input_wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  .Input {
+    border: none;
+    width: auto;
+    height: 3rem;
+    border-radius: 1rem;
+    font-size: 1rem;
+    padding-left: 10rem;
+    box-shadow: $inner-shadow;
+    background-color: $white;
+    font-family: inherit;
+    color: $greyDark;
+    &::placeholder {
+      color: $greyLight-3;
+    }
+    &:focus {
+      outline: none;
+      box-shadow: $shadow;
+      ~ .search_icon {
+        color: $primary;
+      }
+    }
+  }
+  label {
+    color: black !important;
+    left: 40px;
+  }
+}

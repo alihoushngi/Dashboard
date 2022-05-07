@@ -1,0 +1,5 @@
+export const ROUTE_CONSTANT = {
+  PROTECTED: "PROTECTED",
+  MEMBER: "MEMBER",
+  GUEST: "GUEST",
+};

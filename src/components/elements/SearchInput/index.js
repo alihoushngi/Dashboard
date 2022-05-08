@@ -10,7 +10,7 @@ const SearchInput = ({ value, onChange }) => {
       <div className="search_wrapper">
         <input
           type="text"
-          className="m-4 search"
+          className="search"
           placeholder="Search"
           value={value}
           onChange={onChange}

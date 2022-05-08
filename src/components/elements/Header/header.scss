@@ -76,3 +76,36 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .button_container {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .right_side_header {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 368px) {
+  .image_warpper {
+    flex-direction: column;
+    align-items: center;
+  }
+  .right_side_header {
+    flex-direction: column;
+  }
+  .icon_wrapper {
+    flex-direction: row;
+  }
+}
+
+@media (max-width: 378px) {
+  .right_side_header {
+    flex-wrap: wrap;
+  }
+}

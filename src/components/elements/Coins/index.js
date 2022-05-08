@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getCoin } from "../../../services/api";
+import { CRYPTO_MARKETS_BASE_URL, getCoin } from "../../../services/api";
 import Coin from "../Coin";
 import Loader from "../Loader";
 import SearchInput from "../SearchInput";
@@ -10,18 +10,19 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper";
 import "./index.scss";
+import axios from "axios";
 
 const Landing = () => {
   const [coins, setCoins] = useState([]);
   const [search, setSearch] = useState("");
 
   useEffect(() => {
-    const fetchAPI = async () => {
-      const data = await getCoin();
-      setCoins(data);
-    };
-
-    fetchAPI();
+    axios
+      .get(
+        `${CRYPTO_MARKETS_BASE_URL}/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false&price_change_percentage=1h`
+      )
+      .then((res) => setCoins(res.data))
+      .catch((err) => console.log(err));
   }, []);
 
   const searchHandeler = (event) => {

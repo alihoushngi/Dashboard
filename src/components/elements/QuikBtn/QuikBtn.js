@@ -5,7 +5,7 @@ import "./QuikBtn.scss";
 const QuikBtn = ({ route, path, type }) => {
   return (
     <div className="button_wrapper">
-      <Link to={route} href={path} className="m-4">
+      <Link to={route} href={path} className="">
         <span></span>
         <span></span>
         <span></span>

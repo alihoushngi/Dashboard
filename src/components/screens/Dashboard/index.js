@@ -41,8 +41,8 @@ function Dashboard() {
   const { user } = useContext(userContext);
 
   return (
-    <>
-      <div className="container align-items-center d-flex justify-content-center text-light">
+    <div className="row g-0">
+      <div className="container align-items-center d-flex justify-content-center text-light wallet_wrapper ">
         {user.wallets.map((item, index) => (
           <Wallet
             image={item.image}
@@ -53,15 +53,15 @@ function Dashboard() {
           />
         ))}
       </div>
-      <div className="d-flex text-light justify-content-center">
-        <div className="overview">
+      <div className="text-light row g-0 justify-content-center">
+        <div className="col-12 col-md-6 overview text-center">
           <h3 className="text-capitalize">overview</h3>
           <p className="mt-3">
             Total Balance : USD {nFormatter(user.totalbalance, 1)}
           </p>
           <p>Revenue : USD {nFormatter(user.revenue, 0)}</p>
         </div>
-        <div className="Chart_wrapper  mt-3">
+        <div className="Chart_wrapper col-12 col-md-6 mt-3">
           <h3 className="text-light  text-capitalize text-center mt-3">
             Transaction
           </h3>
@@ -70,10 +70,10 @@ function Dashboard() {
           </div>
         </div>
       </div>
-      <div className="Coins_wrapper container">
+      <div className="Coins_wrapper container mt-3">
         <Coins />
       </div>
-    </>
+    </div>
   );
 }
 

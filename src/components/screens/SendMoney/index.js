@@ -5,38 +5,60 @@ import Select from "react-select";
 import "./SendMoney.scss";
 
 const SendMoney = () => {
-  const { user } = useContext(userContext);
-  const { input } = useState("");
+  // context
+  const { user, setUser } = useContext(userContext);
+  //  All Wallets
   const wallets = user.wallets;
-  const setContextValue = user.setUser;
-
-  const [defaultValue, setDefaultValue] = useState({
+  //  selected Wallets
+  const [selctedWallet, setSelctedWallet] = useState({
     label: "Bitcoin",
     value: "Bitcoin",
   });
 
+  // Form State for Amout Value and State Value
+  const [form, setForm] = useState({ amount: "", address: "" });
+
+  // Create an Object For SelectOption Props for <Select></Select>
   const selectOptions = wallets.map((wallet) => {
     return { value: wallet.name, label: wallet.name };
   });
 
+  // OnChange Function For <Select></Select>
   const walletChangeHandler = (e) => {
-    setDefaultValue(e);
+    setSelctedWallet(e);
   };
-
-  const [form, setForm] = useState({ amount: "", address: "" });
-  console.log(form);
-
+  // OnSubmit Function for Form Element
   const formHandler = (e) => {
+    // Disable Reloading
     e.preventDefault();
-    const data = {
-      ...form,
-      wallet: defaultValue,
-    };
-  };
 
-  // const inputReceiverHandler = (event) => {
-  //   setInput(event.target.value);
-  // };
+    // find Selected Wallet Name from Context wallets
+    const selectedWallet = wallets.find(
+      (wallet) => wallet.name === selctedWallet.value
+    );
+    // Condition for checking valid amount
+    if (form.amount <= selectedWallet.usd) {
+      // Update selected Wallet usd
+      selectedWallet.usd = selectedWallet.usd - form.amount;
+      // Update UserContext
+      setUser({
+        // Rest User OBJ
+        ...user,
+        // Update User Wallets
+        wallets: [
+          // Rest User Wallets except selected wallet
+          ...wallets.filter((wallet) => {
+            return wallet.name !== selctedWallet.value;
+          }),
+          // update USD amount of Wallet that we changed in line 42
+          selectedWallet,
+        ],
+      });
+    } else {
+      // error
+      console.log("mojodi kafi nist");
+    }
+  };
 
   return (
     <>
@@ -62,9 +84,9 @@ const SendMoney = () => {
             </h3>
             <Select
               options={selectOptions}
-              defaultValue={defaultValue}
+              selctedWallet={selctedWallet}
               onChange={walletChangeHandler}
-              value={defaultValue}
+              value={selctedWallet}
               className="Option"
             />
           </div>
@@ -81,7 +103,7 @@ const SendMoney = () => {
                 onChange={(e) =>
                   setForm({
                     ...form,
-                    amount: e.target.value,
+                    amount: parseInt(e.target.value),
                   })
                 }
               />

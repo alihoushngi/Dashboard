@@ -10,6 +10,7 @@
     rgba(3, 233, 244, 0.5998774509803921) 100%
   );
   font-weight: bold;
+  max-width: 300px !important;
 }
 
 .Chart_wrapper {
@@ -27,6 +28,18 @@
 }
 
 .Coins_wrapper {
-  width: 100px;
+  width: 80% !important;
   height: 100px;
+}
+
+@media (max-width: 1200px) {
+  .Coins_wrapper {
+    display: none;
+  }
+}
+
+@media (max-width: 550px) {
+  .wallet_wrapper {
+    flex-wrap: wrap;
+  }
 }

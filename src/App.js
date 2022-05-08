@@ -1,13 +1,16 @@
 import Template from "./components/layouts/Template";
+import NewsContextProvider from "./context/NewsContextProvider";
 import UserContextProvider from "./context/UserContextProvider";
 import AppRoutes from "./routes/AppRoutes";
 
 function App() {
   return (
     <UserContextProvider>
-      <Template>
-        <AppRoutes />
-      </Template>
+      <NewsContextProvider>
+        <Template>
+          <AppRoutes />
+        </Template>
+      </NewsContextProvider>
     </UserContextProvider>
   );
 }

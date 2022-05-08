@@ -4,14 +4,14 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
 import "./input.scss";
 
-const SearchInput = ({ value, onChange }) => {
+const SearchInput = ({ value, onChange, placeholder }) => {
   return (
     <>
       <div className="search_wrapper">
         <input
           type="text"
           className="search"
-          placeholder="Search"
+          placeholder={placeholder}
           value={value}
           onChange={onChange}
         />

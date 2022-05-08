@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { CRYPTO_MARKETS_BASE_URL, getCoin } from "../../../services/api";
+import { CRYPTO_MARKETS_BASE_URL } from "../../../services/api";
 import Coin from "../Coin";
 import Loader from "../Loader";
 import SearchInput from "../SearchInput";
@@ -12,7 +12,7 @@ import { Navigation } from "swiper";
 import "./index.scss";
 import axios from "axios";
 
-const Landing = () => {
+const Coins = () => {
   const [coins, setCoins] = useState([]);
   const [search, setSearch] = useState("");
 
@@ -32,21 +32,48 @@ const Landing = () => {
   const searchCoins = coins.filter((coin) =>
     coin.name.toLowerCase().includes(search.toLowerCase())
   );
-
   return (
     <>
-      <SearchInput value={search} onChange={searchHandeler} />
+      <SearchInput
+        value={search}
+        onChange={searchHandeler}
+        placeholder="Search Coins"
+      />
 
       {coins.length ? (
-        <div className="d-flex">
+        <div className="">
           <Swiper
             navigation={true}
             slidesPerView={5}
             modules={[Navigation]}
             className="mySwiper"
-            centeredSlides
-            loop
             grabCursor
+            breakpoints={{
+              320: {
+                slidesPerView: 1,
+                spaceBetween: 0,
+              },
+              375: {
+                slidesPerView: 1,
+                spaceBetween: 10,
+              },
+              640: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+              },
+              768: {
+                slidesPerView: 3,
+                spaceBetween: 40,
+              },
+              1024: {
+                slidesPerView: 4,
+                spaceBetween: 50,
+              },
+              1440: {
+                slidesPerView: 7,
+                spaceBetween: 20,
+              },
+            }}
           >
             {searchCoins.map((coin) => (
               <SwiperSlide key={coin.id}>
@@ -69,4 +96,4 @@ const Landing = () => {
   );
 };
 
-export default Landing;
+export default Coins;

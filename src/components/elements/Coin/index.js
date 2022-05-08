@@ -8,8 +8,7 @@ const Coin = ({ name, image, price }) => {
         <img src={image} alt={name} />
       </div>
       <div className="CoinBody align-self-center">
-        <span>Name: {name}</span>
-        <span>Price: </span>
+        <span>{name}</span>
         <span>{price.toLocaleString()}</span>
       </div>
     </div>

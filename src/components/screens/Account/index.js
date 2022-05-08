@@ -1,7 +1,12 @@
 import React from "react";
+import RegForm from "../../elements/RegForm";
 
 function Account() {
-  return <div>Account</div>;
+  return (
+    <div className="d-flex justify-content-center">
+      <RegForm />
+    </div>
+  );
 }
 
 export default Account;

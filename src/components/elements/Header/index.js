@@ -3,7 +3,6 @@ import { userContext } from "../../../context/UserContextProvider";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBell, faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
 import "./header.scss";
 import SearchInput from "../SearchInput";
 import QuikBtn from "../QuikBtn/QuikBtn";
@@ -62,7 +61,7 @@ const Header = () => {
             </div>
           </div>
           <div className="col-lg-3 col-md-6 col-sm-12 button_container">
-            <QuikBtn route="/sendmoney" path="#" />
+            <QuikBtn route="/sendmoney" path="#" text="Quick transition" />
           </div>
           <div className="col-lg-3 col-md-6 col-sm-12">
             <div className="d-flex flex-row justify-content-center align-items-center right_side_header">
@@ -78,7 +77,11 @@ const Header = () => {
                 </i>
               </div>
               <div className="search_wrapper">
-                <SearchInput value={input} onChange={handleInputChnage} />
+                <SearchInput
+                  value={input}
+                  onChange={handleInputChnage}
+                  placeholder="Search"
+                />
               </div>
             </div>
           </div>

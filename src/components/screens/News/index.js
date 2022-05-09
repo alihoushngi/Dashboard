@@ -5,6 +5,8 @@ import Card from "../../elements/Card";
 import { shorten, descShorten } from "../../../helpers";
 
 const News = () => {
+  document.title = "News";
+
   const news = useContext(newsContext);
 
   return (

@@ -6,6 +6,8 @@ import "./SendMoney.scss";
 import { Toastify } from "../../elements/Toastify";
 
 const SendMoney = () => {
+  document.title = "Send Money";
+
   // context
   const { user, setUser } = useContext(userContext);
   //  All Wallets

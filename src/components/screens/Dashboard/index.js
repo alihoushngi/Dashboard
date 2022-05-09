@@ -39,6 +39,7 @@ const data = [
 
 function Dashboard() {
   const { user } = useContext(userContext);
+  document.title = "Dashboard";
 
   return (
     <div className="row g-0">

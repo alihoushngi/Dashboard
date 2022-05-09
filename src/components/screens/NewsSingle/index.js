@@ -9,6 +9,7 @@ const NewsSingle = () => {
   const [newsSingle, setNewsSingle] = useState([]);
   const location = useLocation().pathname;
   const pageID = location.split("/")[2];
+  // document.title = tshorten(newsSingle.title);
 
   useEffect(() => {
     axios
@@ -29,7 +30,7 @@ const NewsSingle = () => {
           </div>
           <div className="w-50 p-4 m-4">
             <h3 className="fs-3">{shorten(newsSingle.title)}</h3>
-            <paragraph>{newsSingle.text}</paragraph>
+            <p>{newsSingle.text}</p>
           </div>
         </div>
       )}

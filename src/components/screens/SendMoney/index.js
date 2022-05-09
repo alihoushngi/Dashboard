@@ -95,13 +95,13 @@ const SendMoney = () => {
           </div>
 
           <div className="container justify-content-center d-flex">
-            <div className="Input_wrapperr position-relative">
-              <label className="text-light position-absolute">Amount</label>
+            <div className="Input_wrapperr ">
+              <label className="text-light ">Amount</label>
               <input
                 id="amount"
                 name="amount"
                 type="text"
-                className="m-4 Input"
+                className="Input"
                 value={form.amount}
                 onChange={(e) =>
                   setForm({
@@ -109,17 +109,16 @@ const SendMoney = () => {
                     amount: parseInt(e.target.value),
                   })
                 }
+                autoComplete="off"
               />
             </div>
-            <div className="Input_wrapperr position-relative">
-              <label className="text-light position-absolute">
-                Reacive Address
-              </label>
+            <div className="Input_wrapperr ">
+              <label className="text-light ">Reacive Address</label>
               <input
                 id="address"
                 name="address"
                 type="text"
-                className="m-4 Input"
+                className="Input"
                 value={form.address}
                 onChange={(e) =>
                   setForm({
@@ -127,12 +126,13 @@ const SendMoney = () => {
                     address: e.target.value,
                   })
                 }
+                autoComplete="off"
               />
             </div>
           </div>
           <div className="Button_submit d-flex justify-content-center">
             <div className="button_wrapper">
-              <button href="#" className="m-4 text-uppercase" type="submit">
+              <button href="#" className="mt-4 text-uppercase" type="submit">
                 <span></span>
                 <span></span>
                 <span></span>

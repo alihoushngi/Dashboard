@@ -140,14 +140,17 @@
 .Input_wrapperr {
   position: relative;
   display: flex;
-  align-items: center;
+
+  flex-direction: column;
+
   .Input {
+    margin-right: 0.5rem;
     border: none;
-    width: auto;
+    width: 300px;
     height: 3rem;
     border-radius: 1rem;
     font-size: 1rem;
-    padding-left: 10rem;
+    padding-left: 1rem;
     box-shadow: $inner-shadow;
     background-color: $white;
     font-family: inherit;
@@ -164,7 +167,21 @@
     }
   }
   label {
-    color: black !important;
-    left: 40px;
+    color: #03e9f4 !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .Button_submit {
+    width: 50%;
+    align-self: center;
+    button {
+      font-size: 10px !important;
+    }
   }
 }

@@ -87,16 +87,13 @@ const RegForm = () => {
       validationSchema={validate}
     >
       {({ errors, handleChange, values, touched, resetForm }) => (
-        <div className="form_wrapper d-flex flex-column align-items-center m-3 w-25 text-light Input_wrapper position-relative">
+        <div className="form_wrapper d-flex flex-column align-items-center m-3 w-100 text-light Input_wrapper position-relative">
           <Form
             onSubmit={(e) => handleSubmit(e, values)}
-            className="d-flex flex-column"
+            className="d-flex flex-column w-75 align-items-center"
           >
             <div>
-              <label
-                htmlFor="name"
-                className="text-light position-absolute fw-bold text-uppercase"
-              >
+              <label htmlFor="name" className="text-light  text-uppercase">
                 Name
               </label>
               <Field
@@ -105,17 +102,16 @@ const RegForm = () => {
                 id="name"
                 name="name"
                 type="text"
-                className="ms-4 mt-1 mb-1 Input "
+                className=" mt-1 mb-1 Input "
+                autoComplete="off"
+
                 // inputHandler={handleChange}
                 // value={values.name}
               />
             </div>
             {errors.name && touched.name && <span>{errors.name}</span>}
             <div>
-              <label
-                htmlFor="fname"
-                className="text-light position-absolute fw-bold text-uppercase"
-              >
+              <label htmlFor="fname" className="text-light  text-uppercase">
                 Family
               </label>
               <Field
@@ -124,7 +120,8 @@ const RegForm = () => {
                 id="fname"
                 name="fname"
                 type="text"
-                className="ms-4 mt-1 mb-1 Input "
+                className=" mt-1 mb-1 Input "
+                autoComplete="off"
 
                 // inputHandler={handleChange}
                 // value={values.fname}
@@ -133,10 +130,7 @@ const RegForm = () => {
             {errors.fname && touched.fname && <span>{errors.fname}</span>}
 
             <div>
-              <label
-                htmlFor="email"
-                className="text-light position-absolute fw-bold text-uppercase"
-              >
+              <label htmlFor="email" className="text-light  text-uppercase">
                 Email
               </label>
               <Field
@@ -145,7 +139,8 @@ const RegForm = () => {
                 id="email"
                 name="email"
                 type="text"
-                className="ms-4 mt-1 mb-1 Input "
+                className=" mt-1 mb-1 Input "
+                autoComplete="off"
 
                 // inputHandler={handleChange}
                 // value={values.email}
@@ -154,10 +149,7 @@ const RegForm = () => {
             {errors.email && touched.email && <span>{errors.email}</span>}
 
             <div>
-              <label
-                htmlFor="password"
-                className="text-light position-absolute fw-bold text-uppercase"
-              >
+              <label htmlFor="password" className="text-light  text-uppercase">
                 Password
               </label>
               <Field
@@ -166,7 +158,8 @@ const RegForm = () => {
                 id="currentPassword"
                 name="currentPassword"
                 type="password"
-                className="ms-4 mt-1 mb-1 Input "
+                className=" mt-1 mb-1 Input "
+                autoComplete="off"
 
                 // inputHandler={handleChange}
                 // value={values.password}
@@ -177,10 +170,7 @@ const RegForm = () => {
             )}
 
             <div>
-              <label
-                htmlFor="nPassword"
-                className="text-light position-absolute fw-bold text-uppercase"
-              >
+              <label htmlFor="nPassword" className="text-light  text-uppercase">
                 New Password
               </label>
               <Field
@@ -189,7 +179,8 @@ const RegForm = () => {
                 id="nPassword"
                 name="nPassword"
                 type="password"
-                className="ms-4 mt-1 mb-1 Input "
+                className=" mt-1 mb-1 Input "
+                autoComplete="off"
 
                 // inputHandler={handleChange}
                 // value={values.nPassword}
@@ -200,10 +191,7 @@ const RegForm = () => {
             )}
 
             <div>
-              <label
-                htmlFor="rPassword"
-                className="text-light position-absolute fw-bold text-uppercase"
-              >
+              <label htmlFor="rPassword" className="text-light  text-uppercase">
                 Repeat Password
               </label>
               <Field
@@ -212,7 +200,8 @@ const RegForm = () => {
                 id="rPassword"
                 name="rPassword"
                 type="password"
-                className="ms-4 mt-1 mb-1 Input "
+                className=" mt-1 mb-1 Input "
+                autoComplete="off"
 
                 // inputHandler={handleChange}
                 // value={values.rPassword}
@@ -223,7 +212,7 @@ const RegForm = () => {
             )}
 
             <div className="buttonSection d-flex justify-content-center">
-              <div className="button_container-2 ms-4 mt-3">
+              <div className="button_container-2  mt-3">
                 <button
                   type="reset"
                   className="text-uppercase"

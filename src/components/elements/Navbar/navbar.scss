@@ -3,13 +3,22 @@ ul {
     margin: 1rem;
   }
 
+  @media (max-width: 400px) {
+    .list-item {
+      margin: 0.5rem !important;
+      .link {
+        font-size: 0.4rem !important;
+      }
+    }
+  }
+
   .link {
     text-decoration: none;
     font-style: normal !important;
     color: #fff;
     font-size: 0.6rem;
     transition: 0.3s;
-    @media (min-width: 767px) {
+    @media (min-width: 700px) {
       font-size: 1rem;
     }
     &:hover {

@@ -1,16 +1,15 @@
 @import "../../../styles/global.scss";
 
 .Input_wrapper {
-  position: relative;
   display: flex;
   align-items: center;
   .Input {
     border: none;
-    width: auto;
+    width: 100%;
     height: 3rem;
     border-radius: 1rem;
     font-size: 1rem;
-    padding-left: 10rem;
+    padding-left: 1rem;
     box-shadow: $inner-shadow;
     background-color: $white;
     font-family: inherit;
@@ -27,10 +26,10 @@
     }
   }
   label {
-    color: black !important;
-    left: 95px !important;
+    color: #03e9f4 !important;
     padding-top: 1rem;
     font-size: small !important;
+    display: block;
   }
 }
 
@@ -261,5 +260,23 @@
   50%,
   100% {
     bottom: 100%;
+  }
+}
+
+@media (max-width: 400px) {
+  .Input_wrapper input {
+    margin: 0 !important;
+  }
+  .Input_wrapper label {
+    margin: 0 !important;
+  }
+  .Input_wrapper .Input {
+    font-size: 0.7rem !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .Input_wrapper input {
+    width: 400px !important;
   }
 }

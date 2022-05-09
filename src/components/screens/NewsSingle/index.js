@@ -28,7 +28,7 @@ const NewsSingle = () => {
           <div className="w-50 text-center image_wrapper">
             <img src={newsSingle.image} alt="blog" className="image w-75 m-4" />
           </div>
-          <div className="w-50 p-4 m-4">
+          <div className="w-50 p-4 m-4 description_wrapper">
             <h3 className="fs-3">{shorten(newsSingle.title)}</h3>
             <p>{newsSingle.text}</p>
           </div>

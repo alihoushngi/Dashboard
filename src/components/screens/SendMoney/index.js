@@ -3,6 +3,7 @@ import { userContext } from "../../../context/UserContextProvider";
 import Wallet from "../../elements/Wallet/Wallet";
 import Select from "react-select";
 import "./SendMoney.scss";
+import { Toastify } from "../../elements/Toastify";
 
 const SendMoney = () => {
   // context
@@ -56,7 +57,7 @@ const SendMoney = () => {
       });
     } else {
       // error
-      console.log("mojodi kafi nist");
+      Toastify("error", "Not enough Balance");
     }
   };
 
@@ -92,12 +93,12 @@ const SendMoney = () => {
           </div>
 
           <div className="container justify-content-center d-flex">
-            <div className="Input_wrapper position-relative">
+            <div className="Input_wrapperr position-relative">
               <label className="text-light position-absolute">Amount</label>
               <input
                 id="amount"
                 name="amount"
-                type="number"
+                type="text"
                 className="m-4 Input"
                 value={form.amount}
                 onChange={(e) =>
@@ -108,7 +109,7 @@ const SendMoney = () => {
                 }
               />
             </div>
-            <div className="Input_wrapper position-relative">
+            <div className="Input_wrapperr position-relative">
               <label className="text-light position-absolute">
                 Reacive Address
               </label>

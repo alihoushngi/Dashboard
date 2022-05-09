@@ -10,7 +10,7 @@ const UserContextProvider = ({ children }) => {
       fname: "Houshangi",
       email: "alihoushngi@gmail.com",
       avatar: avatar,
-      password: "123456",
+      password: "12345678aA",
       status: "offline",
       totalbalance: 12345752.1,
       revenue: 14000,

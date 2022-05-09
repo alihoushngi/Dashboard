@@ -2,6 +2,7 @@ import Account from "../components/screens/Account";
 import Dashboard from "../components/screens/Dashboard";
 import News from "../components/screens/News";
 import SendMoney from "../components/screens/SendMoney";
+import NewsSingle from "../components/screens/NewsSingle";
 import { ROUTE_CONSTANT } from "./constant";
 
 export const appRouts = [
@@ -23,6 +24,13 @@ export const appRouts = [
     name: "news",
     component: <News />,
     path: "/news",
+    access: ROUTE_CONSTANT.MEMBER,
+    children: [],
+  },
+  {
+    name: "NewsSingle",
+    component: <NewsSingle />,
+    path: "/news/:id",
     access: ROUTE_CONSTANT.MEMBER,
     children: [],
   },

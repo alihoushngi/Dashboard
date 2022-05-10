@@ -108,7 +108,7 @@ const RegForm = () => {
             </div>
             {errors.name && touched.name && <span>{errors.name}</span>}
             <div>
-              <label htmlFor="fname" className="text-light  text-uppercase">
+              <label htmlFor="fname" className="text-light text-uppercase">
                 Family
               </label>
               <Field

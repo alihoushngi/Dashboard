@@ -26,23 +26,20 @@ const RegForm = () => {
           fname: values.fname,
         }));
       }
-      if (values.password !== "") {
-        setUser((prev) => ({
-          ...prev,
-          password: values.currentPassword,
-        }));
-      }
+
       if (values.email !== "") {
         setUser((prev) => ({
           ...prev,
           email: values.email,
         }));
       }
-      if (values.nPassword === values.rPassword) {
-        setUser((prev) => ({
-          ...prev,
-          password: values.rPassword,
-        }));
+      if (values.nPassword !== "" && values.rPassword !== "") {
+        if (values.nPassword === values.rPassword) {
+          setUser((prev) => ({
+            ...prev,
+            password: values.rPassword,
+          }));
+        }
       }
     } else {
       Toastify("error", "Incurrect Password");

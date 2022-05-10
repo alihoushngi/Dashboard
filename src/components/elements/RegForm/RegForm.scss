@@ -22,6 +22,16 @@
   }
 }
 
+.wallets_container {
+  .Wallet_wrapper {
+    background-color: #000;
+    box-shadow: none;
+    h3 {
+      color: #03e9f4;
+    }
+  }
+}
+
 .form-countainer {
   padding-bottom: 20px;
   position: relative;

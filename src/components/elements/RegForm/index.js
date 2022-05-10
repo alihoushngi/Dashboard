@@ -4,7 +4,7 @@ import "./RegForm.scss";
 import * as Yup from "yup";
 import { userContext } from "../../../context/UserContextProvider";
 import { Toastify } from "../Toastify";
-import Select from "react-select";
+import Wallet from "../Wallet/Wallet";
 
 const RegForm = () => {
   // gerfetan pass az context
@@ -97,6 +97,19 @@ const RegForm = () => {
             <p>
               Your email: <span>{user.email}</span>
             </p>
+            <div className="wallets_container">
+              <p>Your Wallet :</p>
+              {user.wallets.map((item, index) => (
+                <Wallet
+                  image={item.image}
+                  key={index}
+                  title={item.name}
+                  usd={item.usd}
+                  balance={item.balance}
+                  className="bg-dark"
+                />
+              ))}
+            </div>
           </div>
           <div className="form_wrapper d-flex flex-column align-items-center m-3  text-light Input_wrapper position-relative">
             <h5 className="text-decoration-underline">

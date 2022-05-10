@@ -4,10 +4,9 @@ import Wallet from "../../elements/Wallet/Wallet";
 import Select from "react-select";
 import "./SendMoney.scss";
 import { Toastify } from "../../elements/Toastify";
+import { Helmet } from "react-helmet-async";
 
 const SendMoney = () => {
-  document.title = "Send Money";
-
   // context
   const { user, setUser } = useContext(userContext);
   //  All Wallets
@@ -65,6 +64,10 @@ const SendMoney = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Send Money</title>
+        <meta name="description" content="this is a Send Money page" />
+      </Helmet>
       <div className="container align-items-center d-flex justify-content-center text-light">
         {user.wallets.map((item, index) => (
           <Wallet

@@ -31,11 +31,22 @@ const Header = () => {
         <div className="container d-flex justify-content-around align-items-center flex-wrap row">
           <div className="col-lg-3 col-md-6 col-sm-12">
             <div className="image_warpper d-flex">
-              <img src={user.avatar} className="avatar" alt="avatar" />
+              <img
+                src={user.avatar}
+                className="avatar position-relative"
+                alt="avatar"
+              />
+              <div
+                className="overlay position-absolute"
+                style={
+                  user.status === "online"
+                    ? { visibility: "hidden" }
+                    : { visibility: "visible" }
+                }
+              ></div>
               <div className=" flex-column ms-4 mt-4 ">
                 <h3 className="">
-                  {user.name}
-                  {user.fname}
+                  {user.name} {user.fname}
                 </h3>
                 <div className="switch">
                   <div className="switch__1">

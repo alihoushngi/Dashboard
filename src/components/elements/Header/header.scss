@@ -16,6 +16,15 @@
   }
 }
 
+.image_warpper {
+  .overlay {
+    background-color: #202323bf;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+}
+
 // ? switch
 .switch {
   grid-column: 1 / 2;
@@ -87,6 +96,12 @@
       width: 50px !important;
       height: 50px !important;
     }
+    .overlay {
+      background-color: #202323bf;
+      width: 50px !important;
+      height: 50px !important;
+      border-radius: 50%;
+    }
     h3 {
       font-size: 0.7rem;
     }
@@ -139,6 +154,12 @@
     img {
       width: 50px !important;
       height: 50px !important;
+    }
+    .overlay {
+      background-color: #202323bf;
+      width: 50px !important;
+      height: 50px !important;
+      border-radius: 50%;
     }
   }
   .right_side_header {

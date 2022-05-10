@@ -5,6 +5,7 @@ import ReChart from "../../elements/Rechart";
 import "./Dashboard.scss";
 import { nFormatter } from "../../../helpers";
 import Coins from "../../elements/Coins";
+import { Helmet } from "react-helmet-async";
 
 const data = [
   {
@@ -39,42 +40,47 @@ const data = [
 
 function Dashboard() {
   const { user } = useContext(userContext);
-  document.title = "Dashboard";
 
   return (
-    <div className="row g-0">
-      <div className="container align-items-center d-flex justify-content-center text-light wallet_wrapper ">
-        {user.wallets.map((item, index) => (
-          <Wallet
-            image={item.image}
-            key={index}
-            title={item.name}
-            usd={item.usd}
-            balance={item.balance}
-          />
-        ))}
-      </div>
-      <div className="text-light row g-0 justify-content-center">
-        <div className="col-12 col-md-6 overview text-center">
-          <h3 className="text-capitalize">overview</h3>
-          <p className="mt-3">
-            Total Balance : USD {nFormatter(user.totalbalance, 1)}
-          </p>
-          <p>Revenue : USD {nFormatter(user.revenue, 0)}</p>
+    <>
+      <Helmet>
+        <title>Dashboard</title>
+        <meta name="description" content="This is an dashboard page" />
+      </Helmet>
+      <div className="row g-0">
+        <div className="container align-items-center d-flex justify-content-center text-light wallet_wrapper ">
+          {user.wallets.map((item, index) => (
+            <Wallet
+              image={item.image}
+              key={index}
+              title={item.name}
+              usd={item.usd}
+              balance={item.balance}
+            />
+          ))}
         </div>
-        <div className="Chart_wrapper col-12 col-md-6 mt-3">
-          <h3 className="text-light  text-capitalize text-center mt-3">
-            Transaction
-          </h3>
-          <div className="Chart_data">
-            <ReChart data={data} />
+        <div className="text-light row g-0 justify-content-center">
+          <div className="col-12 col-md-6 overview text-center">
+            <h3 className="text-capitalize">overview</h3>
+            <p className="mt-3">
+              Total Balance : USD {nFormatter(user.totalbalance, 1)}
+            </p>
+            <p>Revenue : USD {nFormatter(user.revenue, 0)}</p>
+          </div>
+          <div className="Chart_wrapper col-12 col-md-6 mt-3">
+            <h3 className="text-light  text-capitalize text-center mt-3">
+              Transaction
+            </h3>
+            <div className="Chart_data">
+              <ReChart data={data} />
+            </div>
           </div>
         </div>
+        <div className="Coins_wrapper container mt-3">
+          <Coins />
+        </div>
       </div>
-      <div className="Coins_wrapper container mt-3">
-        <Coins />
-      </div>
-    </div>
+    </>
   );
 }
 

@@ -3,14 +3,17 @@ import { newsContext } from "../../../context/NewsContextProvider";
 import Loader from "../../elements/Loader";
 import Card from "../../elements/Card";
 import { shorten, descShorten } from "../../../helpers";
+import { Helmet } from "react-helmet-async";
 
 const News = () => {
-  document.title = "News";
-
   const news = useContext(newsContext);
 
   return (
     <>
+      <Helmet>
+        <title>News</title>
+        <meta name="description" content="this is a news page" />
+      </Helmet>
       <div className="container">
         <div className="d-flex flex-wrap justify-content-around">
           {news.length === 0 ? (
